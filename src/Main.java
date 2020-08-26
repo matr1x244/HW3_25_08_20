@@ -11,12 +11,44 @@
 
  */
 
+import java.util.Map;
+import java.util.TreeMap;
+
 public class Main {
 
     public static void main (String [] args) {
 
+        // 1 задание массив с набором слов
+        // начало
+
+        String[] animals = {"dog", "cat", "rabbit", "bee", "dog", "rabbit", "horse", "bear", "fish", "cat", "human", "human"};
+        Map<String, Integer> result = new TreeMap<>(); // Treemap чтобы была правильная сортировка, через HashMap всё в разброс не красиво
+        for (String x : animals) { // запускаем проверку  как на уроке
+            result.put(x, result.getOrDefault(x, 0) + 1); // выводим более современный вариант как на уроке
+        }
+        System.out.println("Результат: " + result);
+
+        // конец
+
+        // 2 задание телефонный справочник
+        // начало
+
+        Phonebook book = new Phonebook();
+        book.addContact("Фанзиль", "Кусяпкулов", "78362494949");
+        book.addContact("Сергей", "Решетников", "78362352545");
+        book.addContact("Мария","Николаева", "78362655506");
+        book.addContact("Леонид","Принцев", "78362803555");
+        book.addContact("Андрей","Беляев", "78362626890");
+        book.addContact("Фанзиль", "Кусяпкулов", "78362101010");
 
 
+        // поиск в справочнике phonebook
+        book.getFind("Кусяпкулов");
+        book.getFind("Беляев");
+        book.getFind("Николаева");
     }
+
+         // конец
+
 
 }
